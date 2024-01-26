@@ -10,7 +10,7 @@ function App() {
   const [selectedComponent, setSelectedComponent] = useState<string>("Home");
 
   const components: { [key: string]: any } = {
-    Home: <Home />,
+    Home: <Home setCurrentPage={setSelectedComponent} />,
     About: <About />,
     Links: <Links />,
     GodModes: <GodModes />,

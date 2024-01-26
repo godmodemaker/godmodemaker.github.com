@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 
-const Home = () => {
+interface Props {
+  setCurrentPage: (pageName: string) => void;
+}
+
+const Home = ({ setCurrentPage }: Props) => {
   useEffect(() => {
     document.title = "Home | God Mode Maker";
   }, []);
@@ -22,10 +26,16 @@ const Home = () => {
         and people who already know the drill, head on to the God Modes!
       </p>
       <div className="flex justify-center mt-3 md:mt-0 lg:mt-3">
-        <button className="mr-8 uppercase bg-secondary text-primary px-5 py-2 rounded-lg">
+        <button
+          onClick={() => setCurrentPage("GodModes")}
+          className="mr-8 uppercase bg-secondary text-primary px-5 py-2 rounded-lg"
+        >
           God Modes
         </button>
-        <button className="uppercase bg-highlight text-secondary px-5 py-2 rounded-lg">
+        <button
+          onClick={() => setCurrentPage("Help")}
+          className="uppercase bg-highlight text-secondary px-5 py-2 rounded-lg"
+        >
           Help Area
         </button>
       </div>
@@ -36,8 +46,13 @@ const Home = () => {
       <p className="pt-2 text-lg text-justify">
         My work does take a lot of time and I am currently a student so if you
         can, consider donating on my Patreon or Buy me a Coffee from the{" "}
-        <a className="underline hover:cursor-pointer">Donate Section</a> of this
-        website :D
+        <a
+          onClick={() => setCurrentPage("Links")}
+          className="underline hover:cursor-pointer"
+        >
+          Links Page
+        </a>{" "}
+        of this website :D
       </p>
     </div>
   );
