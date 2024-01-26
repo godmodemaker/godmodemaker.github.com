@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const featuresLeft = [
   "Warp to Map",
   "Heal Pokemons",
@@ -27,6 +29,9 @@ const featuresRight = [
 ];
 
 const Help = () => {
+  useEffect(() => {
+    document.title = "Help | God Mode Maker";
+  }, []);
   return (
     <div className="w-[90%] md:w-[75%] lg:w-[45%]">
       <div className="h-0 md:h-10"></div>
