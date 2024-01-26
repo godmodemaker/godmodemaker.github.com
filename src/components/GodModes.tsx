@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const GodModes = () => {
   useEffect(() => {
-    document.title = "Projects | God Mode Maker";
+    document.title = "GodModes | God Mode Maker";
   }, []);
   const [searchInput, setSearchInput] = useState("");
   return (
